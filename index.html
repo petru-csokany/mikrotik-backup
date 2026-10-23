@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="MikroTik Backup: a personal project for storing encrypted RouterOS configuration backups in its operator's Google Drive.">
+  <title>MikroTik Backup — Personal configuration backups</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="canonical" href="https://petru-csokany.github.io/mikrotik-backup/">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header><div class="wrap header"><a class="brand" href="index.html"><span aria-hidden="true"></span>MikroTik Backup</a><nav aria-label="Main navigation"><a href="index.html" aria-current="page">Overview</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></nav></div></header>
+  <div class="wrap"><main id="main">
+    <p class="eyebrow">Personal automation project</p>
+    <h1>Configuration backups.<br>Stored in your Drive.</h1>
+    <p class="lead">MikroTik Backup is a personal utility for copying encrypted MikroTik RouterOS configuration backup files to its operator’s Google Drive, using rclone.</p>
+    <div class="note">This website explains the application and its data practices. The backup utility runs on the operator’s devices; this website does not run backups or request Google account access.</div>
+    <h2>How the backup works</h2>
+    <ol>
+      <li>RouterOS creates a password-encrypted configuration backup on the operator’s device.</li>
+      <li>The operator authorizes the utility through Google OAuth. The local rclone configuration holds the authorization tokens.</li>
+      <li>The utility uploads the encrypted backup to Google Drive and manages the files and folders it creates.</li>
+      <li>The operator can download a backup and restore it with RouterOS, using the backup password.</li>
+    </ol>
+    <h2>Limited Google Drive access</h2>
+    <p>The application requests <code class="scope">https://www.googleapis.com/auth/drive.file</code>. In this workflow, it accesses files and folders created by this application. It does not request access to the operator’s entire Drive, Gmail, contacts, or calendar.</p>
+    <h2>Personal use and contact</h2>
+    <p>This project is operated by Petru Csokany for personal use. It is not offered as a public backup service. Project contact: <a href="https://github.com/petru-csokany">petru-csokany on GitHub</a>.</p>
+    <div class="actions"><a href="privacy.html">Read the privacy policy</a><a href="terms.html">Read the terms of use</a></div>
+  </main></div>
+  <footer><div class="wrap"><p>Independent personal project. Not affiliated with or endorsed by MikroTik, Google, or the rclone project.</p><div class="footer-links"><a href="privacy.html">Privacy policy</a><a href="terms.html">Terms of use</a></div></div></footer>
+</body>
+</html>
